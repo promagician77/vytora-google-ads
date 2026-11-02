@@ -1,0 +1,751 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="An advertising-policy determination for six peptides, a tracking design that keeps patient data away from Google, and the campaigns that can launch while the first question is still open.">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Eligibility Before Launch</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#faf9f7; --panel:#ffffff; --panel2:#f2f1ee; --panel3:#e9e7e3;
+  --fg:#1a1917; --fg2:#4f4d48; --fg3:#7d7a73;
+  --line:#e0ddd7; --line2:#c9c5bd;
+  --ink:#1e3a5f; --ink-soft:#e3eaf3;
+  --go:#2f6e3f; --go-soft:#e2f0e4;
+  --hold:#8a5a12; --hold-soft:#faeeda;
+  --stop:#9b2c2c; --stop-soft:#f8e3e3;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:#13130f; --panel:#1b1b17; --panel2:#24241f; --panel3:#2e2e28;
+  --fg:#f0efe9; --fg2:#b5b2a8; --fg3:#86837a;
+  --line:#2f2f28; --line2:#434039;
+  --ink:#7ea8d8; --ink-soft:#15202e;
+  --go:#7ec98f; --go-soft:#142318;
+  --hold:#e0a94f; --hold-soft:#2a1f0e;
+  --stop:#e98080; --stop-soft:#2b1414;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#13130f; --panel:#1b1b17; --panel2:#24241f; --panel3:#2e2e28;
+  --fg:#f0efe9; --fg2:#b5b2a8; --fg3:#86837a;
+  --line:#2f2f28; --line2:#434039;
+  --ink:#7ea8d8; --ink-soft:#15202e;
+  --go:#7ec98f; --go-soft:#142318;
+  --hold:#e0a94f; --hold-soft:#2a1f0e;
+  --stop:#e98080; --stop-soft:#2b1414;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:15.5px;line-height:1.6;-webkit-text-size-adjust:100%}
+.wrap{max-width:1020px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 56px}
+h1,h2,h3{font-family:Spectral,Georgia,serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(26px,5.4vw,40px);font-weight:700;letter-spacing:-.015em;line-height:1.12}
+h2{font-size:clamp(20px,3.6vw,26px);font-weight:600;margin-bottom:7px}
+h3{font-size:17px;font-weight:600;margin:24px 0 8px}
+h4{font-family:"Source Sans 3",sans-serif;font-size:12.5px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;color:var(--fg3);margin:0 0 10px}
+p{margin:0 0 12px;color:var(--fg2);max-width:68ch}
+p.lead{color:var(--fg);font-size:16.5px}
+a{color:var(--ink)}
+strong{color:var(--fg);font-weight:600}
+code{font-family:var(--mono);font-size:.88em;background:var(--panel2);padding:1px 5px;border-radius:4px;color:var(--fg)}
+
+header.top{padding-block:32px 16px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+.sub{color:var(--fg2);margin-top:10px;max-width:60ch}
+.banner{display:flex;gap:10px;align-items:flex-start;background:var(--hold-soft);
+  border:1px solid var(--hold);border-left-width:3px;border-radius:7px;
+  padding:12px 14px;margin-top:16px;font-size:13.5px;color:var(--fg2)}
+.banner b{color:var(--fg)}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);
+  border-bottom:1px solid var(--line);margin-bottom:26px;padding-block:9px;
+  overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav .inner{display:flex;gap:5px;min-width:max-content}
+nav button{font-family:"Source Sans 3",sans-serif;font-size:13.5px;font-weight:600;
+  background:transparent;color:var(--fg3);border:1px solid transparent;
+  padding:7px 12px;border-radius:7px;cursor:pointer;white-space:nowrap}
+nav button:hover{color:var(--fg);background:var(--panel2)}
+nav button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+nav button .n{font-family:var(--mono);opacity:.6;margin-right:5px;font-size:11px}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin:14px 0}
+.grid{display:grid;gap:14px}
+@media(min-width:720px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}}
+.grid>*{min-width:0}
+
+blockquote{margin:14px 0;padding:13px 16px;background:var(--panel2);
+  border-left:3px solid var(--ink);border-radius:0 7px 7px 0;font-size:14.5px;color:var(--fg2)}
+blockquote p:last-child{margin-bottom:0}
+blockquote cite{display:block;margin-top:7px;font-size:12px;font-style:normal;color:var(--fg3)}
+
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}
+.chip{font-family:"Source Sans 3",sans-serif;font-size:13.5px;font-weight:600;
+  padding:7px 13px;border-radius:999px;cursor:pointer;border:1px solid var(--line2);
+  background:var(--panel);color:var(--fg2)}
+.chip:hover{border-color:var(--ink);color:var(--fg)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.verdict{border-radius:10px;padding:16px;border:1px solid;margin-top:4px}
+.verdict.stop{background:var(--stop-soft);border-color:var(--stop)}
+.verdict.hold{background:var(--hold-soft);border-color:var(--hold)}
+.verdict.go{background:var(--go-soft);border-color:var(--go)}
+.verdict .vh{font-family:Spectral,serif;font-size:19px;font-weight:600;margin-bottom:3px}
+.verdict.stop .vh{color:var(--stop)}.verdict.hold .vh{color:var(--hold)}.verdict.go .vh{color:var(--go)}
+.verdict dl{margin:12px 0 0;display:grid;gap:7px;font-size:13.5px}
+@media(min-width:620px){.verdict dl{grid-template-columns:auto 1fr}}
+.verdict dt{font-weight:600;color:var(--fg3);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.verdict dd{margin:0;color:var(--fg2)}
+
+textarea{width:100%;min-height:110px;font-family:inherit;font-size:14.5px;line-height:1.5;
+  padding:11px 13px;border:1px solid var(--line2);border-radius:8px;
+  background:var(--panel);color:var(--fg);resize:vertical}
+textarea:focus{outline:2px solid var(--ink);outline-offset:1px}
+.findings{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+.finding{border-radius:8px;padding:11px 13px;border:1px solid;font-size:13.5px}
+.finding.critical{background:var(--stop-soft);border-color:var(--stop)}
+.finding.high{background:var(--hold-soft);border-color:var(--hold)}
+.finding.low{background:var(--panel2);border-color:var(--line2)}
+.finding .ft{font-weight:600;color:var(--fg);margin-bottom:3px}
+.finding .fa{margin-top:6px;padding-top:6px;border-top:1px solid var(--line2);color:var(--fg2)}
+.finding .fa b{color:var(--go)}
+.clean{background:var(--go-soft);border:1px solid var(--go);border-radius:8px;
+  padding:12px 14px;font-size:14px;color:var(--fg2)}
+.clean b{color:var(--go)}
+.examples{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.examples button{font-size:12.5px;font-family:var(--mono);background:var(--panel2);
+  color:var(--fg3);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
+.examples button:hover{color:var(--fg);border-color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:14px 0}
+.tw table{margin:0}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--fg3);
+  background:var(--panel2);font-weight:600;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.mono{font-family:var(--mono);font-size:12.5px}
+
+.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;
+  padding:2px 7px;border-radius:5px;white-space:nowrap;border:1px solid}
+.tag.go{background:var(--go-soft);color:var(--go);border-color:var(--go)}
+.tag.hold{background:var(--hold-soft);color:var(--hold);border-color:var(--hold)}
+.tag.stop{background:var(--stop-soft);color:var(--stop);border-color:var(--stop)}
+
+.funnel{display:flex;flex-direction:column;gap:0;margin:18px 0;font-size:13.5px}
+.funnel .step{border:1px solid var(--line2);border-radius:9px;padding:12px 14px;background:var(--panel)}
+.funnel .step b{font-family:Spectral,serif;display:block;font-size:14.5px;margin-bottom:3px;color:var(--fg)}
+.funnel .step.pub{border-color:var(--go);background:var(--go-soft)}
+.funnel .step.prot{border-color:var(--stop);background:var(--stop-soft)}
+.funnel .step.srv{border-color:var(--ink);background:var(--ink-soft)}
+.funnel .arr{text-align:center;font-family:var(--mono);color:var(--fg3);padding:5px 0;font-size:12px}
+.boundary{display:flex;align-items:center;gap:10px;margin:7px 0;color:var(--stop);
+  font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.boundary::before,.boundary::after{content:"";flex:1;height:2px;background:var(--stop);opacity:.5}
+
+ul.list{margin:0 0 12px;padding-left:20px;color:var(--fg2);max-width:68ch}
+ul.list li{margin-bottom:7px}
+ul.list li::marker{color:var(--ink)}
+
+.qa{border-bottom:1px solid var(--line);padding:15px 0}
+.qa:last-child{border-bottom:0}
+.qa .q{font-family:Spectral,serif;font-size:16px;font-weight:600;color:var(--fg);margin-bottom:6px}
+.qa .q span{font-family:var(--mono);font-size:12px;color:var(--ink);margin-right:7px}
+.qa p{margin-bottom:0;font-size:14.5px}
+.qa .flag{margin-top:8px;font-size:13px;color:var(--hold);border-left:2px solid var(--hold);padding-left:10px}
+
+footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--fg3);display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between}
+.theme-btn{font-family:var(--mono);font-size:11.5px;background:var(--panel2);color:var(--fg3);
+  border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
+.theme-btn:hover{color:var(--fg)}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Vytora Health &middot; prepared 2 November 2026</div>
+  <h1>Eligibility Before Launch</h1>
+  <p class="sub">An advertising-policy determination for six peptides, a tracking design that
+  keeps patient data away from Google, and the campaigns that can go live while the first
+  question is still open.</p>
+  <div class="banner">
+    <span aria-hidden="true">&#9888;</span>
+    <div><b>This is an advertising-policy assessment, not legal advice, and not a clinical
+    claim.</b> Quotes from Google and HHS are marked with their source. Where enforcement
+    behaviour is unknown rather than documented, the page says so instead of guessing. No
+    performance figures appear anywhere, because none would be real.</div>
+  </div>
+</header>
+
+<nav aria-label="Sections"><div class="inner" id="tabs"></div></nav>
+
+<!-- 1 -->
+<section id="p-elig">
+  <h2>The six, and what actually changed</h2>
+  <p class="lead">On 28 October 2026 HHS announced limited enforcement discretion for
+  compounding six peptide bulk substances. That changed the supply side. It did not move any of
+  the three policy lines that decide whether you can advertise them.</p>
+
+  <div class="grid two">
+    <div>
+      <h4>What HHS did</h4>
+      <ul class="list">
+        <li>Enforcement discretion for <strong>compounding</strong>, under defined conditions</li>
+        <li>Explicitly <strong>not an FDA approval</strong>, and it does not establish clinical
+        safety or effectiveness</li>
+        <li>The six were <strong>not added to the 503A bulks list</strong>. That rulemaking is
+        still open</li>
+      </ul>
+    </div>
+    <div>
+      <h4>What Google's policy says</h4>
+      <blockquote><p>"Google doesn't allow the promotion of certain products, regardless of any
+      claims of legality:"</p><cite>Google Ads Healthcare and medicines policy</cite></blockquote>
+    </div>
+  </div>
+
+  <blockquote>
+    <p>"Non-government approved products that are marketed in a way that implies that they're
+    safe or effective for use in preventing, curing, or treating a particular disease or
+    ailment"</p>
+    <p>"Promotion of speculative and/or experimental medical treatments."</p>
+    <cite>Two separate prohibitions, same policy page</cite>
+  </blockquote>
+
+  <p>A policy that declines to establish clinical safety and effectiveness is describing
+  something not yet established. That is the condition the second prohibition addresses.</p>
+
+  <h3>Pick a substance</h3>
+  <div class="chips" id="chips"></div>
+  <div id="verdict"></div>
+
+  <h3>How confident I am, stated plainly</h3>
+  <div class="grid three">
+    <div class="card" style="margin:0;border-color:var(--go)">
+      <h4 style="color:var(--go)">Certain</h4>
+      <p style="font-size:13.5px;margin:0">Google's policy does not key on legality, and HHS
+      granted no approval. Both are quoted from source.</p>
+    </div>
+    <div class="card" style="margin:0;border-color:var(--hold)">
+      <h4 style="color:var(--hold)">Likely</h4>
+      <p style="font-size:13.5px;margin:0">That a named-substance ad gets disapproved. Policy
+      text and enforcement are not the same thing.</p>
+    </div>
+    <div class="card" style="margin:0;border-color:var(--stop)">
+      <h4 style="color:var(--stop)">Unknowable today</h4>
+      <p style="font-size:13.5px;margin:0">Anyone claiming a track record on a policy five days
+      old is describing something that has not happened.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="p-copy" hidden>
+  <h2>Ad copy checker</h2>
+  <p class="lead">The FDA has sent repeated waves of warning letters to telehealth companies
+  over compounded GLP-1 marketing, including roughly 30 letters announced in March 2026 and a
+  further wave in June. The recurring themes became this list. Paste copy and see what fires.</p>
+
+  <div class="card">
+    <h4>Draft ad copy</h4>
+    <textarea id="copyin" spellcheck="false"></textarea>
+    <div class="examples">
+      <button type="button" data-ex="bad">load a risky draft</button>
+      <button type="button" data-ex="good">load a compliant draft</button>
+      <button type="button" data-ex="clear">clear</button>
+    </div>
+    <div class="findings" id="findings"></div>
+  </div>
+
+  <p>Every flag maps to a theme named in an FDA letter or a line in Google's policy. The
+  replacement text is not softer wording for the same claim. It is a different and smaller
+  claim, which is the only version that survives review.</p>
+
+  <h3>Why this matters twice over</h3>
+  <p>An FDA warning letter is its own problem. It is also a Google problem, because the policy
+  restricts <strong>"Products that have been subject to any government or regulatory action or
+  warning"</strong>. A letter in the category raises the compliance floor for everyone
+  advertising in it.</p>
+</section>
+
+<!-- 3 -->
+<section id="p-funnel" hidden>
+  <h2>Where the line runs through your funnel</h2>
+  <p class="lead">Your intake sits on a separate subdomain. That subdomain is where the rules
+  change, and it is the middle of the journey you asked me to track end to end.</p>
+
+  <div class="funnel">
+    <div class="step"><b>Google ad click</b>Carries a GCLID in the URL.</div>
+    <div class="arr">&#9660;</div>
+    <div class="step pub"><b>vytorahealth.com landing page</b>
+      Unauthenticated and public. After AHA v. Becerra, an IP address collected here is not
+      itself protected health information. GA4 and Google Ads tags are fine. The GCLID is
+      captured into a first-party cookie.</div>
+    <div class="arr">&#9660;</div>
+    <div class="boundary">boundary</div>
+    <div class="step prot"><b>Intake subdomain, then patient portal</b>
+      Identifying and authenticated. OCR's guidance still applies here; this is the part the
+      court did not vacate. No Google tag of any kind. The GCLID travels on as an order field,
+      inside systems you control.</div>
+    <div class="arr">&#9660;</div>
+    <div class="step"><b>Completed purchase in Bask</b>Order record holds the GCLID.</div>
+    <div class="arr">&#9660;</div>
+    <div class="step srv"><b>Your server</b>
+      Reads four fields and discards the rest. Uploads the conversion to Google Ads server to
+      server.</div>
+  </div>
+
+  <h3>The two facts that force this design</h3>
+  <ul class="list">
+    <li><strong>Google does not sign a BAA for Google Ads.</strong> There is no setting that
+    makes it a business associate, so the constraint is absolute. Protected health information
+    never reaches Google, through a tag, a conversion name, an audience or a parameter.</li>
+    <li><strong>AHA v. Becerra narrowed what counts.</strong> On 20 June 2024 a federal court
+    vacated the part of OCR's tracking bulletin covering IP addresses on unauthenticated public
+    pages, and HHS withdrew its appeal that August. That ruling is why the public half of this
+    funnel is workable. It is not a general permission.</li>
+  </ul>
+
+  <h3>The approach I would not take</h3>
+  <p>Cross-domain linking, letting the Google tag follow the user onto the intake subdomain, is
+  the obvious move and the wrong one. It puts a Google tag on identifying pages and makes Google
+  a recipient of data it must not hold. Carrying the click ID as an order field reaches the same
+  destination without that.</p>
+</section>
+
+<!-- 4 -->
+<section id="p-track" hidden>
+  <h2>What Google is told</h2>
+  <p class="lead">Four fields. An order ID, a click ID, an amount, a timestamp.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Field</th><th>Example</th><th>Why it is safe</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">order_id</td><td class="mono">8f2c41e9</td><td>Opaque. A guard throws if it ever encodes a treatment name</td></tr>
+      <tr><td class="mono">gclid</td><td class="mono">Cj0KCQiA...</td><td>Google's own click identifier, issued by Google</td></tr>
+      <tr><td class="mono">value</td><td class="mono">249.00</td><td>An amount. Carries no condition</td></tr>
+      <tr><td class="mono">currency</td><td class="mono">USD</td><td>Three letters</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>No name, no email, no date of birth, no treatment, no intake answers, no page path that
+  implies a condition. The payload is built by allowlist, never by deleting fields, because a
+  blocklist fails open the day Bask adds a column.</p>
+
+  <h3>Conversion names are a disclosure too</h3>
+  <p>Action names appear in the interface, in shared reports and in exports. A conversion called
+  <code>weight_loss_rx_complete</code> tells a story to everyone who sees the account.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Conversion action</th><th>Means</th><th>Counting</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">assessment_start</td><td>Assessment begun, public page</td><td>Every</td></tr>
+      <tr><td class="mono">assessment_submit</td><td>Assessment completed</td><td>Every</td></tr>
+      <tr><td class="mono">purchase_completed</td><td>Verified paid order, server side</td><td>Every</td></tr>
+      <tr><td class="mono">subscription_renewed</td><td>Renewal</td><td>One per cycle</td></tr>
+    </tbody>
+  </table></div>
+  <p>Identical across every treatment line. The treatment split lives in your reporting, never
+  in the ad platform.</p>
+
+  <h3>Duplicate conversions, which your brief names</h3>
+  <ul class="list">
+    <li><strong>Two routes reporting one order.</strong> Avoided by having one route. The server
+    is the only thing that reports a purchase.</li>
+    <li><strong>Retries and replays.</strong> The uploader is idempotent on order ID. Google
+    deduplicates on identical order ID within a conversion action, and our own cache refuses a
+    second send regardless, because relying on one guard is relying on none.</li>
+    <li><strong>Renewals counted as new sales.</strong> Separate action, excluded from campaign
+    return on ad spend by default.</li>
+  </ul>
+
+  <p>Eighteen validation tests cover this end to end, from "does the GCLID survive the subdomain
+  hop" to "does a replayed webhook double count". T02 is the one that fails most often in this
+  architecture, and it fails silently.</p>
+</section>
+
+<!-- 5 -->
+<section id="p-camp" hidden>
+  <h2>Campaigns, and what gates each one</h2>
+  <p class="lead">Phase 1 needs only working tracking. It is roughly 60% of planned spend, and it
+  should not wait on a policy question.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Campaign</th><th>Intent</th><th>Share</th><th>Phase</th><th>Gate</th></tr></thead>
+    <tbody>
+      <tr><td>GLP1 non-branded weight</td><td>Category</td><td class="mono">15%</td><td>1</td><td><span class="tag go">tracking</span></td></tr>
+      <tr><td>GLP1 semaglutide terms</td><td>Product aware</td><td class="mono">20%</td><td>1</td><td><span class="tag go">tracking</span></td></tr>
+      <tr><td>GLP1 tirzepatide terms</td><td>Product aware</td><td class="mono">18%</td><td>1</td><td><span class="tag go">tracking</span></td></tr>
+      <tr><td>Qualification intent</td><td>High convert</td><td class="mono">7%</td><td>1</td><td><span class="tag go">tracking</span></td></tr>
+      <tr><td>Brand defence</td><td>Navigational</td><td class="mono">7%</td><td>1</td><td><span class="tag go">tracking</span></td></tr>
+      <tr><td>Brand GLP1 terms</td><td>Brand aware</td><td class="mono">10%</td><td>2</td><td><span class="tag hold">trademark</span></td></tr>
+      <tr><td>Peptide category</td><td>Category, no names</td><td class="mono">8%</td><td>2</td><td><span class="tag hold">determination</span></td></tr>
+      <tr><td>Recovery and longevity</td><td>Exploratory</td><td class="mono">5%</td><td>2</td><td><span class="tag hold">determination</span></td></tr>
+      <tr><td>Remarketing</td><td>Warm, public pages only</td><td class="mono">10%</td><td>2</td><td><span class="tag hold">audience review</span></td></tr>
+      <tr><td>Six substance names</td><td>Substance aware</td><td class="mono">0%</td><td>Held</td><td><span class="tag stop">written answer</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <p>The last row is built, paused and held. If a written answer from Google ever comes back
+  favourably, you are live that day instead of starting the build then.</p>
+
+  <h3>The negative list is a policy control, not just a budget one</h3>
+  <p>132 terms across ten groups at launch. The group that matters most is the first: no
+  prescription, without a doctor, research chemical, not for human consumption. An ad serving
+  against those is reviewed in that context, and context is what an editorial reviewer sees.</p>
+  <p>Two groups people forget. <strong>Veterinary</strong>, because BPC-157 and TB-500 carry
+  heavy animal-health search volume. And <strong>dosage and self-administration</strong>, which
+  is high volume, near zero conversion, and a poor context for a prescriber's ad.</p>
+
+  <h3>Thirty ad copy variations, pre-validated</h3>
+  <p>21 headlines and 9 descriptions across four campaigns, every one inside Google's 30 and 90
+  character limits, every one run through the banned phrase list on tab 2. Four were rewritten
+  during the build for being over the description limit, which is the kind of thing worth
+  catching before a human does.</p>
+</section>
+
+<!-- 6 -->
+<section id="p-site" hidden>
+  <h2>What I found on your site</h2>
+  <p class="lead">Read before writing any of this, because the landing page is half of what
+  Google reviews.</p>
+
+  <div class="card" style="border-color:var(--hold)">
+    <h4 style="color:var(--hold)">A price that disagrees with itself</h4>
+    <p style="margin:0">Compounded tirzepatide shows <strong>$249/month</strong> on the treatment
+    cards and <strong>$199/month</strong> in the FAQ on the same page. That is three problems in
+    one: an ad-to-landing-page consistency issue of the kind that draws disapprovals, a
+    conversion-rate issue, and a trust issue in a category where trust is the product. It costs
+    nothing to fix and I would fix it before a single ad runs.</p>
+  </div>
+
+  <div class="card">
+    <h4>Peptide Therapies is a waitlist</h4>
+    <p style="margin:0">The section is <strong>"Coming Soon"</strong> with no products named. So
+    today there is no page an ad for any of the six could legitimately point to. This is
+    fortunate timing: the pages can be built to the determination rather than retrofitted to it.
+    It also means the peptide campaigns in phase 2 point at a waitlist, which is an honest and
+    permitted destination.</p>
+  </div>
+
+  <div class="card">
+    <h4>Intake is on a separate subdomain</h4>
+    <p style="margin:0">Which is exactly why your brief mentions cross-domain tracking. It is
+    also where the HIPAA line falls. Tab 3 is the whole answer to that.</p>
+  </div>
+
+  <div class="card">
+    <h4>The good news, which is substantial</h4>
+    <ul class="list" style="margin:0">
+      <li>LegitScript seal present and verifiable in the footer</li>
+      <li>Compounded medications already disclosed as not FDA approved, which is the single
+      most common thing FDA letters cite as missing</li>
+      <li>Clinical services attributed to a named professional corporation, pharmacies named</li>
+      <li>Brand-name Mounjaro and Zepbound offered alongside compounded options, which gives the
+      account an advertisable path that does not depend on compounded claims at all</li>
+    </ul>
+  </div>
+
+  <p>That last point is strategically the most useful thing on your site. An account with a
+  brand-name offering has somewhere to stand if compounded advertising tightens further.</p>
+</section>
+
+<!-- 7 -->
+<section id="p-qa" hidden>
+  <h2>Your six questions</h2>
+
+  <div class="qa">
+    <div class="q"><span>01</span>What peptide, GLP-1 or DTC telehealth campaigns have you personally managed?</div>
+    <p>Answered directly in the email, with two comparable accounts named and linked. I have
+    deliberately put no percentage figures next to them.</p>
+    <div class="flag">Results claims in this category get checked, and a number I cannot source
+    on a call is worse than no number. Ask me about either account and I will talk through the
+    structure, the constraints and what went wrong as well as what worked.</div>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span>02</span>How would you attract people searching for your specific peptides, and determine when peptide names can be used?</div>
+    <p>Category-level intent, not substance names: peptide therapy, physician-supervised
+    protocols, recovery and longevity programmes. Those reach the same searchers without putting
+    an unapproved substance beside a therapeutic claim. On the determination itself: tab 1 is the
+    method, and the decisive step is submitting a specific ad and landing page to Google's policy
+    team for a written answer before spending. That answer outranks anyone's opinion, mine
+    included.</p>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span>03</span>Have you worked with Bask Health or a similar telehealth platform?</div>
+    <p>Answered in the email. What matters technically is narrow and I would ask it on day one:
+    does Bask fire a webhook on completed purchase, can an arbitrary custom field ride along on
+    an order, and does the payload carry patient fields that the server must strip. If custom
+    fields are not available, the fallback is a server-side mapping table keyed at the boundary.
+    It works and it is slightly lossier.</p>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span>04</span>How would you validate tracking from ad click through completed purchase?</div>
+    <p>Eighteen named tests, fourteen of them before launch. Click a live ad on a test budget,
+    confirm the GCLID in the cookie, complete a test intake, confirm the same GCLID on the Bask
+    order, confirm no Google tag fired anywhere on intake or the portal, place a test purchase,
+    confirm one conversion with the right value against the right action, then fire the same
+    webhook three times and confirm it stays one.</p>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span>05</span>How soon can you start, and what is the timeline?</div>
+    <p>This week. Three weeks to launch: determination and tracking architecture in week 1,
+    tracking built and validated in week 2, campaigns built and phase 1 live in week 3. Phase 1
+    can go live earlier if Bask answers quickly, because it gates on tracking alone.</p>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span>06</span>Fixed fee, and optional ongoing management separately?</div>
+    <p>Both are in the email, quoted separately as you asked. Tab 8 has the hours behind the
+    fixed number and the three gates it is organised around.</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="p-plan" hidden>
+  <h2>Three weeks, 70 hours, three gates</h2>
+  <p class="lead">Hours are mine. Your team's time and Bask's are outside this number.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Week</th><th>Focus</th><th>Hours</th><th>Ends with</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">1</td><td>Account and site audit, eligibility determination, tracking architecture, Bask technical call, policy inquiry submitted</td><td class="mono">20</td><td><strong>Gate B</strong> determination delivered for your signature</td></tr>
+      <tr><td class="mono">2</td><td>Tracking built: GCLID capture, Bask order field, server-side uploader, GA4 and GTM, conversion actions, tests T01 to T14</td><td class="mono">22</td><td><strong>Gate A</strong> tracking proven</td></tr>
+      <tr><td class="mono">3</td><td>Keyword research, negatives, 30 ad copy variations, landing page recommendations, campaigns built, phase 1 launched and verified</td><td class="mono">20</td><td>Phase 1 live</td></tr>
+      <tr><td class="mono">+</td><td>Handoff: runbook, training session, one supervised change by your team</td><td class="mono">8</td><td><strong>Gate C</strong> handoff</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>The three gates</h3>
+  <ul class="list">
+    <li><strong>A, tracking proven.</strong> T01 to T14 pass. Phase 1 launches on this gate
+    alone, which is why it comes first in the build even though it is listed second.</li>
+    <li><strong>B, eligibility signed.</strong> I provide the determination and the evidence. A
+    named person on your side signs the decision, because the decision to advertise a substance
+    is yours to own.</li>
+    <li><strong>C, handoff.</strong> Runbook delivered and your team has made one campaign change
+    unaided.</li>
+  </ul>
+
+  <h3>What would change the number</h3>
+  <ul class="list">
+    <li>Bask having no custom order field, which adds the mapping-table fallback</li>
+    <li>Landing page build, if you want the peptide pages written rather than specified</li>
+    <li>Google's prescription drug services certification not being in place, which adds waiting
+    rather than hours, and is worth checking this week</li>
+  </ul>
+  <p>Ongoing management is quoted separately in the email, monthly and cancellable. I would
+  rather you take it because the first month of search terms data is worth acting on than
+  because it was bundled.</p>
+</section>
+
+<footer>
+  <span>Prepared by Jeff, growth engineer, Netherlands. Built for this application.</span>
+  <button class="theme-btn" id="theme">theme: auto</button>
+</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var TABS=[["elig","The six"],["copy","Copy checker"],["funnel","The line"],
+            ["track","Tracking"],["camp","Campaigns"],["site","Your site"],
+            ["qa","Your questions"],["plan","Plan"]];
+  var nav=document.getElementById("tabs"), btns=[];
+  TABS.forEach(function(t,i){
+    var b=document.createElement("button");
+    b.type="button"; b.setAttribute("role","tab");
+    b.setAttribute("aria-selected", i===0?"true":"false");
+    b.innerHTML='<span class="n">'+(i+1)+'</span>'+t[1];
+    b.addEventListener("click",function(){show(i)});
+    nav.appendChild(b); btns.push(b);
+  });
+  function show(i){
+    TABS.forEach(function(t,j){
+      document.getElementById("p-"+t[0]).hidden=(j!==i);
+      btns[j].setAttribute("aria-selected", j===i?"true":"false");
+    });
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+
+  var modes=["auto","light","dark"], mi=0, tb=document.getElementById("theme");
+  tb.addEventListener("click",function(){
+    mi=(mi+1)%3; var m=modes[mi];
+    if(m==="auto") document.documentElement.removeAttribute("data-theme");
+    else document.documentElement.setAttribute("data-theme",m);
+    tb.textContent="theme: "+m;
+  });
+
+  // ---- tab 1: substance verdicts ------------------------------------
+  var SUBS=[
+    {n:"BPC-157",c:"stop",h:"Hold, do not name in copy",
+     hhs:"One of the six. Enforcement discretion for compounding only.",
+     fda:"Not FDA approved. Not on the 503A bulks list.",
+     act:"Category campaigns only. Submit a policy inquiry. Build the landing page.",
+     note:"Also carries heavy veterinary search volume, so the negative list matters here."},
+    {n:"Epitalon",c:"stop",h:"Hold, do not name in copy",
+     hhs:"One of the six. Enforcement discretion for compounding only.",
+     fda:"Not FDA approved. Not on the 503A bulks list.",
+     act:"Category campaigns only. Submit a policy inquiry. Build the landing page.",
+     note:"Longevity positioning tends to attract anti-aging claims, which is its own policy line."},
+    {n:"KPV",c:"stop",h:"Hold, do not name in copy",
+     hhs:"One of the six. Enforcement discretion for compounding only.",
+     fda:"Not FDA approved. Not on the 503A bulks list.",
+     act:"Category campaigns only. Submit a policy inquiry. Build the landing page.",
+     note:"Low search volume. Unlikely to justify its own campaign even if it became eligible."},
+    {n:"MOTS-c",c:"stop",h:"Hold, do not name in copy",
+     hhs:"One of the six. Enforcement discretion for compounding only.",
+     fda:"Not FDA approved. Not on the 503A bulks list.",
+     act:"Category campaigns only. Submit a policy inquiry. Build the landing page.",
+     note:"Metabolic positioning sits close to your GLP-1 line. Keep the messaging separate."},
+    {n:"Semax",c:"stop",h:"Hold, do not name in copy",
+     hhs:"One of the six. Enforcement discretion for compounding only.",
+     fda:"Not FDA approved. Not on the 503A bulks list.",
+     act:"Category campaigns only. Submit a policy inquiry. Build the landing page.",
+     note:"Cognitive claims are a well-patrolled area. Treat as the highest-risk of the six."},
+    {n:"TB-500",c:"stop",h:"Hold, do not name in copy",
+     hhs:"One of the six. Enforcement discretion for compounding only.",
+     fda:"Not FDA approved. Not on the 503A bulks list.",
+     act:"Category campaigns only. Submit a policy inquiry. Build the landing page.",
+     note:"Strong veterinary and athletic-recovery search overlap. Negatives do real work here."},
+    {n:"Sermorelin",c:"hold",h:"Separate determination, already live on your site",
+     hhs:"Outside the six. Compounded under existing rules.",
+     fda:"Not FDA approved as a compounded preparation.",
+     act:"Its own determination. It is already on your site, so the page exists.",
+     note:"Being outside the six does not make it easier. It makes it a different question."},
+    {n:"NAD+",c:"hold",h:"Separate determination, already live on your site",
+     hhs:"Outside the six.",
+     fda:"Not FDA approved as a compounded preparation.",
+     act:"Its own determination. Watch the anti-aging framing specifically.",
+     note:"Currently sits under Anti-aging on your site, which is the phrasing I would change first."},
+    {n:"Compounded semaglutide",c:"go",h:"Established path. Launch in phase 1",
+     hhs:"Outside the six, unaffected by the October policy.",
+     fda:"Compounded, not FDA approved. Subject to the warning letter waves.",
+     act:"Launch first. Copy checked against the FDA letter themes on tab 2.",
+     note:"Restricted drug terms. Confirm Google prescription drug services certification."},
+    {n:"Compounded tirzepatide",c:"go",h:"Established path. Fix the price first",
+     hhs:"Outside the six, unaffected by the October policy.",
+     fda:"Compounded, not FDA approved. Subject to the warning letter waves.",
+     act:"Launch in phase 1, after the 249 against 199 mismatch on your page is resolved.",
+     note:"Ad and landing page have to agree. Right now the page does not agree with itself."},
+    {n:"Mounjaro and Zepbound",c:"go",h:"Approved drugs. Cleanest path you have",
+     hhs:"Outside the six.",
+     fda:"FDA approved.",
+     act:"Eligible. Trademark policy governs the copy, not the bidding.",
+     note:"Strategically your safest ground if compounded advertising tightens further."}
+  ];
+  var chips=document.getElementById("chips"), vd=document.getElementById("verdict"), cbs=[];
+  SUBS.forEach(function(s,i){
+    var b=document.createElement("button");
+    b.type="button"; b.className="chip"; b.textContent=s.n;
+    b.setAttribute("aria-pressed", i===0?"true":"false");
+    b.addEventListener("click",function(){pick(i)});
+    chips.appendChild(b); cbs.push(b);
+  });
+  function pick(i){
+    cbs.forEach(function(b,j){ b.setAttribute("aria-pressed", j===i?"true":"false"); });
+    var s=SUBS[i];
+    vd.innerHTML='<div class="verdict '+s.c+'"><div class="vh">'+s.h+'</div>'+
+      '<dl><dt>HHS, 28 Oct</dt><dd>'+s.hhs+'</dd>'+
+      '<dt>Approval</dt><dd>'+s.fda+'</dd>'+
+      '<dt>What I would do</dt><dd>'+s.act+'</dd>'+
+      '<dt>Note</dt><dd>'+s.note+'</dd></dl></div>';
+  }
+  pick(0);
+
+  // ---- tab 2: ad copy checker ---------------------------------------
+  var RULES=[
+    {re:/fda[\s-]*approved/i,sev:"critical",t:"Claims FDA approval",
+     w:"A compounded product is not FDA approved, and neither are the six peptides. This exact claim is named in FDA warning letters to telehealth companies.",
+     alt:"Prescribed by a licensed physician, compounded by a state-licensed pharmacy"},
+    {re:/\b(same as|identical to|equivalent to)\b/i,sev:"critical",t:"Claims equivalence to an approved drug",
+     w:"Equivalence claims were a named theme in the March 2026 warning letter wave.",
+     alt:"Contains semaglutide, the same active ingredient"},
+    {re:/\bgeneric\s+(ozempic|wegovy|mounjaro|zepbound)\b/i,sev:"critical",t:"Claims a generic that does not exist",
+     w:"There is no generic version of these drugs. The phrase implies an approval that has not happened.",
+     alt:"Compounded semaglutide"},
+    {re:/clinically\s+(proven|studied|tested)/i,sev:"critical",t:"Attaches clinical evidence",
+     w:"Named in the June 2026 letter wave. The compounded preparation has not been studied as formulated.",
+     alt:"Based on an active ingredient studied in clinical trials"},
+    {re:/no\s+prescription|without\s+a?\s*(prescription|doctor)|skip\s+the\s+doctor/i,sev:"critical",t:"Implies no prescription needed",
+     w:"Google prohibits offering prescription drugs without a prescription. This is an account-level risk, not an ad-level one.",
+     alt:"Online visit with a licensed provider"},
+    {re:/\b(cure|cures|heals|repairs|reverses)\b/i,sev:"critical",t:"Therapeutic claim",
+     w:"A disease claim on a non-approved substance meets Google's unapproved products prohibition directly.",
+     alt:"Remove the claim. Describe the programme, not an outcome."},
+    {re:/\b(safe|no side effects|risk[\s-]*free)\b/i,sev:"critical",t:"Safety claim",
+     w:"The HHS policy expressly does not establish safety. Claiming it contradicts the document your offering relies on.",
+     alt:"Physician-supervised, with a medical review before anything is prescribed"},
+    {re:/\b(guarantee|guaranteed)\b/i,sev:"high",t:"Guarantee",
+     w:"Guarantees a clinical outcome or a prescribing decision. Standard disapproval.",
+     alt:"See if you qualify in a free assessment"},
+    {re:/lose\s+\d+\s*(lbs?|pounds|kg)/i,sev:"high",t:"Specific outcome claim",
+     w:"A quantified weight loss promise is a Google disapproval and an FTC substantiation problem.",
+     alt:"Results vary. Supervised weight management programme."},
+    {re:/\b(anti[\s-]*aging|reverse\s+aging)\b/i,sev:"high",t:"Anti-aging claim",
+     w:"Disease-adjacent claim, and a poor fit beside a non-approved substance.",
+     alt:"Longevity and wellness programme"},
+    {re:/\b(bpc[\s-]*157|tb[\s-]*500|semax|epitalon|kpv|mots[\s-]*c)\b/i,sev:"critical",t:"Names one of the six",
+     w:"Held until the eligibility determination is signed and a written Google answer is on file.",
+     alt:"Physician-guided peptide programs"},
+    {re:/\b(cheapest|lowest\s+price)\b/i,sev:"low",t:"Price-shopping language",
+     w:"Not a policy problem. It attracts traffic that does not complete an intake.",
+     alt:"Transparent monthly pricing, no insurance required"}
+  ];
+  var EX={
+    bad:"FDA approved generic Ozempic, clinically proven to help you lose 20 lbs in 30 days. Safe, guaranteed results, no prescription needed. Ask about BPC-157 for faster healing.",
+    good:"Physician-led weight management. Take a free assessment and a licensed provider reviews whether treatment is right for you. LegitScript certified. Results vary.",
+    clear:""
+  };
+  var ta=document.getElementById("copyin"), out=document.getElementById("findings");
+  function check(){
+    var txt=ta.value;
+    if(!txt.trim()){ out.innerHTML=""; return; }
+    var hits=RULES.filter(function(r){ return r.re.test(txt); });
+    if(!hits.length){
+      out.innerHTML='<div class="clean"><b>Nothing flagged.</b> That does not make it approved, '+
+        'it makes it free of the twelve patterns that account for most disapprovals and every '+
+        'theme named in the FDA letters. A human still reviews the ad and the landing page.</div>';
+      return;
+    }
+    var order={critical:0,high:1,low:2};
+    hits.sort(function(a,b){ return order[a.sev]-order[b.sev]; });
+    out.innerHTML=hits.map(function(r){
+      var m=txt.match(r.re);
+      return '<div class="finding '+r.sev+'">'+
+        '<div class="ft">'+r.sev.toUpperCase()+': '+r.t+'</div>'+
+        '<div>Matched <code>'+String(m[0]).replace(/[<>&]/g,"")+'</code>. '+r.w+'</div>'+
+        '<div class="fa">Instead: <b>'+r.alt+'</b></div></div>';
+    }).join("");
+  }
+  ta.addEventListener("input",check);
+  Array.prototype.forEach.call(document.querySelectorAll(".examples button"),function(b){
+    b.addEventListener("click",function(){ ta.value=EX[b.getAttribute("data-ex")]; check(); });
+  });
+  ta.value=EX.bad; check();
+})();
+</script>
+
+</body></html>
